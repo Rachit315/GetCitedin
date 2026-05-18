@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1e1e1e;
+  --reddit-orange: #ff4500;
+  --reddit-orange-light: #ff7744;
+  --reddit-peach: #ffad8e;
+  --section-gray: #f5f5f5;
+  --card-dark: #181818;
+  --footer-bg: #080808;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-reddit-orange: var(--reddit-orange);
+  --color-reddit-orange-light: var(--reddit-orange-light);
+  --color-reddit-peach: var(--reddit-peach);
+  --color-section-gray: var(--section-gray);
+  --color-card-dark: var(--card-dark);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(255, 69, 0, 0.2);
+  color: #1e1e1e;
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(
+    180deg,
+    #ff4500 0%,
+    #ffad8e 17%,
+    #ffffff 100%
+  );
+}
+
+.section-padding {
+  padding-top: clamp(4rem, 10vw, 7.5rem);
+  padding-bottom: clamp(4rem, 10vw, 7.5rem);
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Subtle noise texture overlay */
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
