@@ -35,13 +35,13 @@ export function Hero() {
         </motion.div>
 
         <motion.h1
-          className="flex max-w-4xl flex-wrap items-center justify-center gap-x-3 gap-y-2 text-4xl font-medium leading-[1.1] tracking-tight text-neutral-900 sm:text-5xl md:text-6xl lg:text-[4.25rem]"
+          className="max-w-5xl text-center text-4xl font-medium leading-[1.1] tracking-tight text-neutral-900 sm:text-5xl md:text-6xl lg:text-[3.75rem]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 0.7, ease }}
         >
-          <span>Turn</span>
-          <span className="inline-flex items-center gap-2 text-reddit-orange">
+          Turn{" "}
+          <span className="inline-flex items-baseline gap-2 text-reddit-orange">
             Reddit
             <Image
               src="/images/hero/reddit-icon-inline.svg"
@@ -50,8 +50,10 @@ export function Hero() {
               height={48}
               className="hidden h-10 w-10 sm:inline-block md:h-12 md:w-12"
             />
-          </span>
-          <span>into your highest converting growth channel.</span>
+          </span>{" "}
+          into your
+          <br />
+          <span className="whitespace-nowrap">highest converting growth channel.</span>
         </motion.h1>
 
         <motion.p
